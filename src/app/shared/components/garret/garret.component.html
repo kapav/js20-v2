@@ -1,0 +1,17 @@
+<gable
+  [gableLettering]="tuckInscription"
+  [gableAnnouncement]="revealNotice"
+  [gableToggle]="stashed"
+></gable>
+
+<slope></slope>
+
+<p>garret works!</p>
+
+<div
+  *ngIf="stashed; else pose"
+>{{ positiveNotificationFromGarret }}</div>
+
+<ng-template #pose>
+  <div>{{ negativeNotificationFromGarret }}</div>
+</ng-template>

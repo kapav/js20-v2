@@ -1,0 +1,19 @@
+<garret
+  [garretLettering]="buryInscription"
+  [garretAnnouncement]="evinceNotice"
+  [garretToggle]="lurked"
+></garret>
+
+<p>home-page works!</p>
+
+<div
+  *ngIf="lurked; else pose"
+>{{ positiveNotificationFromHomePage }}</div>  
+
+<ng-template #pose>
+  <div>{{ negativeNotificationFromHomePage }}</div>
+</ng-template>  
+
+<storey
+  (onStoreyToggle)="tumblerFromStorey($event)"
+></storey>

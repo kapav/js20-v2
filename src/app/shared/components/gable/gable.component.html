@@ -1,0 +1,9 @@
+<p>gable works!</p>
+
+<div
+  *ngIf="!dissembled; else display"
+>{{ obscureInscription }}</div>
+
+<ng-template #display>
+  <div>{{ showNotice }}</div>
+</ng-template>

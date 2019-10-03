@@ -1,0 +1,15 @@
+<p>storey works!</p>
+
+<div
+  *ngIf="illustrated; else pose"
+>{{ positiveNotificationFromStorey }}</div>
+
+<ng-template #pose>
+  <div>{{ negativeNotificatinFromStorey }}</div>
+</ng-template>
+
+<wall></wall>
+
+<slab
+  (onSlabToggle)="tumblerFromSlab($event)"
+></slab>
