@@ -1,1 +1,72 @@
 <p>slope works!</p>
+
+<label for="x-input">X</label>
+<input type="text"
+  [value]="xValue"
+  (input)="xValue = $event.target.value">
+
+<label for="y-input">Y</label>
+<input type="text"
+  [ngModel]="yValue"
+  (ngModelChange)="yValue = $event">
+  
+<label for="z-input">Z</label>
+<input type="text" [(ngModel)]="zValue">
+
+<button (click)="calculate()">Вычислить</button>
+<button (click)="reset()">Сброс</button>
+
+<div>Результат: {{ result }}</div>
+
+<!--Двухстронняя привязка контролов для примера-->
+<input type="checkbox" [(ngModel)]="settings.accent">Обратить внимание<br/>
+<input type="checkbox" [(ngModel)]="settings.error">Ошибка<br/>
+<input type="checkbox" [(ngModel)]="settings.highlighted">Выделение<br/>
+
+<!--Директива ngClass-->
+<div [ngClass]="settings">Здравствуй, Вселенная! №1</div><hr/>
+
+<!--Привязка ко классу class binding-->
+<div 
+  [class.accent]="settings.accent"
+  [class.error]="settings.error"
+  [class.highlighted]="settings.highlighted"
+>Здравствуй, Вселенная! №2</div><hr/>
+
+<!--Использование массива вместо объекта-->
+<div [ngClass]="['accent', 'error']">Здравствуй, Вселенная! №3</div><hr/>
+
+<!--Использование строкового значения-->
+<div [ngClass]="'accent error'">Здравствуй, Вселенная! №4</div>
+
+<!--Директива ngStyle для обновления стилей HTML элемента-->
+<div [ngStyle]="getStyles()">Здравствуй, Вселенная! №5</div>
+
+<div *ngIf="showUl">
+  <ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+</div>
+
+<div [style.display]="showUl ? 'block' : 'none'">
+  <ul class="enumeration">
+    <li class="enumeration"
+      *ngFor="let item of items; last as isLast"
+    >{{ item + (!isLast ? ', ' : '') }}</li>
+  </ul>
+</div>
+
+<button
+  (click)="toggleVisibility()"
+>{{ showUl ? 'Скрыть' : 'Показать' }}</button>
+
+<!--Директива ngSwitch отображает один элемент из набора возможных-->
+<div [ngSwitch]="choice">
+  <div *ngSwitchCase="'1'">Вариант 1</div>
+  <div *ngSwitchCase="'2'">Вариант 2</div>
+  <div *ngSwitchCase="'3'">Вариант 3</div>
+  <div *ngSwitchDefault>Вариант по умолчанию</div>
+</div>
+
+<span>Введите натуральное число: </span>
+<input type="text" [(ngModel)]="choice">
