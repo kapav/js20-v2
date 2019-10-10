@@ -1,8 +1,20 @@
 <p>gable works!</p>
 
+<button
+  (click)="switchPrimary()"
+>Переключить первичную надпись</button>
+
 <div
-  *ngIf="!dissembled; else display"
->{{ obscureInscription }}</div>
+  *ngIf="!dissembled; then thenBlock; else display"
+>Данный текст будет проигнорирован</div>
+
+<ng-template #primaryBlock>
+  <div>{{ primaryInscription }}</div>
+</ng-template>
+
+<ng-template #secondaryBlock>
+  <div>{{ obscureInscription }}</div>
+</ng-template>
 
 <ng-template #display>
   <div>{{ showNotice }}</div>

@@ -8,12 +8,12 @@
 
 <div
   *ngIf="lurked; else pose"
->{{ positiveNotificationFromHomePage }}</div>  
+>{{ positiveNotificationFromHomePage }}</div>
 
 <ng-template #pose>
   <div>{{ negativeNotificationFromHomePage }}</div>
-</ng-template>  
+</ng-template>
 
 <storey
-  (onStoreyToggle)="tumblerFromStorey($event)"
+  (onStoreyToggle)="tumblerFromStorey(lurked = $event)"
 ></storey>

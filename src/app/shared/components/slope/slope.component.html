@@ -1,17 +1,17 @@
 <p>slope works!</p>
 
 <label for="x-input">X</label>
-<input type="text"
+<input type="text" id="x-input"
   [value]="xValue"
   (input)="xValue = $event.target.value">
 
 <label for="y-input">Y</label>
-<input type="text"
+<input type="text" id="y-input"
   [ngModel]="yValue"
   (ngModelChange)="yValue = $event">
-  
+
 <label for="z-input">Z</label>
-<input type="text" [(ngModel)]="zValue">
+<input type="text" id="z-input" [(ngModel)]="zValue">
 
 <button (click)="calculate()">Вычислить</button>
 <button (click)="reset()">Сброс</button>
@@ -27,7 +27,7 @@
 <div [ngClass]="settings">Здравствуй, Вселенная! №1</div><hr/>
 
 <!--Привязка ко классу class binding-->
-<div 
+<div
   [class.accent]="settings.accent"
   [class.error]="settings.error"
   [class.highlighted]="settings.highlighted"
@@ -69,4 +69,15 @@
 </div>
 
 <span>Введите натуральное число: </span>
-<input type="text" [(ngModel)]="choice">
+<input type="text" [(ngModel)]="choice"><br/>
+
+<!--
+Template Reference Variable - ссылка на DOM-элемент или директиву в шаблоне.
+К переменной можно обратиться в любой части шаблона, в котором она объявлена.
+-->
+X <input #xInput type="text"><br/>
+Y <input ref-yInput type="text"><br/>
+
+<!--xInput и yInput - ссылки на элементы input, созданные выше-->
+<button (click)="calculateSum(xInput.value, yInput.value)">Вычислить сумму</button><br/>
+<div><span>Результат при суммировании: </span><span>{{ resultOfSum }}</span></div>

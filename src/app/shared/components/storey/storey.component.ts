@@ -12,7 +12,7 @@ export class StoreyComponent implements OnInit {
 
   illustrated: boolean
   positiveNotificationFromStorey = 'Отображено из Store\'я';
-  negativeNotificatinFromStorey = 'Скрыто в Store\'е';
+  negativeNotificationFromStorey = 'Скрыто в Store\'е';
 
   constructor() {}
 
