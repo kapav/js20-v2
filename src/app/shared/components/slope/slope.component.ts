@@ -10,6 +10,7 @@ export class SlopeComponent implements OnInit {
   xValue: number = 0
   yValue: number = 0
   zValue: number = 0
+  wValue: number = 0
   result: number
 
   settings = {
@@ -32,13 +33,14 @@ export class SlopeComponent implements OnInit {
   ngOnInit() {}
 
   calculate() {
-    this.result = +this.xValue + +this.yValue + +this.zValue;
+    this.result = +this.xValue + +this.yValue + +this.zValue + +this.wValue;
   }
 
   reset() {
     this.xValue = 0;
     this.yValue = 0;
     this.zValue = 0;
+    this.wValue = 0;
     this.result = undefined;
   }
 

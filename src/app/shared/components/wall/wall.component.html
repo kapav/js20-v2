@@ -1,1 +1,37 @@
 <p>wall works!</p>
+
+<span>Вводимые символы отрисовываются под инпутом: </span>
+<input #textbox (keyup)="onKeyup(textbox.value)">
+<p>
+  <span>Используется переменная ссылки шаблона без двухсторонней привязки: </span>
+  <span>{{ messageFromTextbox }}</span>
+</p>
+
+<!--(keyup.enter) - привязка обработчика на нажатие по клавише Enter-->
+<span>Символы отрисовываются после нажатия на ввод: </span>
+<input #textboxKeypress (keyup.enter)="onKeyupKeypress(textboxKeypress.value)">
+<p>
+  <span>Используется привязка обработчика на нажатие по клавише ввод: </span>
+  <span>{{ messageKeypress }}</span>
+</p>
+
+<!--(blur)="onKeyupTwoEvents(textboxTwoEvents)" - обработчик на событие потери фокуса-->
+<span>Обработчик на события потери фокуса и нажатие ввода: </span>
+<input #textboxTwoEvents
+  (keyup.enter)="onKeyupTwoEvents(textboxTwoEvents.value)"
+  (blur)="onKeyupTwoEvents(textboxTwoEvents.value)">
+<p>
+  <span>Привязка обработчика на потерю фокуса и нажатие ввода: </span>
+  <span>{{ messageTwoEvents }}</span>
+</p>
+
+<h4>Заполняемый список</h4>
+<span>Значение нового элемента списка: </span>
+<input type="text" #inputFillingList
+  (keyup.enter)="addListItem(inputFillingList.value)">
+<button (click)="addListItem(inputFillingList.value)">Добавить</button>
+<ul>
+  <li *ngFor="let item of fillingList">
+    {{ item }}
+  </li>
+</ul>

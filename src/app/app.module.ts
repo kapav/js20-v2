@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import {EvidenceService} from './shared/services/evidence.service';
 import { AppComponent } from './app.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {GarretComponent} from './shared/components/garret/garret.component';
@@ -30,7 +31,7 @@ import {SlabComponent} from './shared/components/slab/slab.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EvidenceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
