@@ -2,15 +2,7 @@ import {Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 import {EvidenceService} from './../../services/evidence.service';
-
-export class User {
-  constructor(
-    public id: number,
-    public name: string,
-    public role: string,
-    public age?: number)
-  {}
-}
+import {User} from '../../interfaces/user';
 
 @Component({
   selector: 'wall',

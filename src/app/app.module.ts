@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import {EvidenceService} from './shared/services/evidence.service';
@@ -13,6 +13,9 @@ import {GableComponent} from './shared/components/gable/gable.component';
 import {SlopeComponent} from './shared/components/slope/slope.component';
 import {WallComponent} from './shared/components/wall/wall.component';
 import {SlabComponent} from './shared/components/slab/slab.component';
+import {StairwellComponent} from './shared/components/stairwell/stairwell.component';
+import {StaircaseComponent} from './shared/components/staircase/staircase.component';
+import { StairwayComponent } from './shared/components/stairway/stairway.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,16 @@ import {SlabComponent} from './shared/components/slab/slab.component';
     GableComponent,
     SlopeComponent,
     WallComponent,
-    SlabComponent
+    SlabComponent,
+    StairwellComponent,
+    StaircaseComponent,
+    StairwayComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [EvidenceService],
