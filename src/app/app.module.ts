@@ -16,6 +16,7 @@ import {SlabComponent} from './shared/components/slab/slab.component';
 import {StairwellComponent} from './shared/components/stairwell/stairwell.component';
 import {StaircaseComponent} from './shared/components/staircase/staircase.component';
 import { StairwayComponent } from './shared/components/stairway/stairway.component';
+import {BracketPipe} from './shared/pipes/bracket.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { StairwayComponent } from './shared/components/stairway/stairway.compone
     SlabComponent,
     StairwellComponent,
     StaircaseComponent,
-    StairwayComponent
+    StairwayComponent,
+    BracketPipe
   ],
   imports: [
     BrowserModule,

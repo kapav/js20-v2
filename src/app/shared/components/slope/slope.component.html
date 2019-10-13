@@ -60,7 +60,7 @@
   <ul class="enumeration">
     <li class="enumeration"
       *ngFor="let item of items; last as isLast"
-    >{{ item + (!isLast ? ', ' : '') }}</li>
+    >{{ (item | bracket) + (!isLast ? ', ' : '') }}</li>
   </ul>
 </div>
 

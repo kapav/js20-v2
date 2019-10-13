@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
+import {BracketPipe} from '../../pipes/bracket.pipe';
+
 @Component({
   selector: 'slope',
   templateUrl: './slope.component.html',
@@ -21,7 +23,7 @@ export class SlopeComponent implements OnInit {
 
   showUl: boolean = true
   items: string[] = [
-    'Первый', 'Второй', 'Третий', 'Четвёртый', 'Пятый'
+    'Первый', '[Второй]', '{Третий}', '(Четвёртый)', 'Пятый'
   ]
 
   choice: string
