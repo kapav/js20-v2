@@ -9,8 +9,8 @@ import {Output} from '@angular/core';
 export class StoreyComponent implements OnInit {
 
   @Output('onStoreyToggle') tumblerToHomePage = new EventEmitter();
-
   illustrated: boolean
+  
   positiveNotificationFromStorey = 'Отображено из Store\'я';
   negativeNotificationFromStorey = 'Скрыто в Store\'е';
 

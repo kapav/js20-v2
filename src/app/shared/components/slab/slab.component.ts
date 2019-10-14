@@ -9,10 +9,10 @@ import {Output} from '@angular/core';
 export class SlabComponent implements OnInit {
 
   @Output('onSlabToggle') tumblerToStorey = new EventEmitter();
-
   demonstrated: boolean = false
+  
   positiveNotificationFromSlab = 'Отображено из Slab\'а';
-  negativeNotificatinFromSlab = 'Скрыто в Slab\'е';
+  negativeNotificationFromSlab = 'Скрыто в Slab\'е';
 
   constructor() {}
 

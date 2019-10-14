@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-import {BracketPipe} from '../../pipes/bracket.pipe';
-
 @Component({
   selector: 'slope',
   templateUrl: './slope.component.html',

@@ -11,6 +11,7 @@ export class GableComponent implements OnInit {
   @Input('gableLettering') obscureInscription: string
   @Input('gableAnnouncement') showNotice: string
   @Input('gableToggle') dissembled: boolean
+  
   primaryInscription = 'Первичная надпись'
   thenBlock: TemplateRef<any>|null = null
   @ViewChild('primaryBlock', {static: true}) primaryBlock: TemplateRef<any>|null = null
