@@ -32,7 +32,7 @@
 <input type="checkbox" [(ngModel)]="settings.error">Ошибка<br/>
 <input type="checkbox" [(ngModel)]="settings.highlighted">Выделение<br/>
 
-<!--Директива ngClass-->
+<!--Атрибутивная директива ngClass-->
 <div [ngClass]="settings">Здравствуй, Вселенная! №1</div><hr/>
 
 <!--Привязка ко классу class binding-->
@@ -46,7 +46,7 @@
 <div [ngClass]="['accent', 'error']">Здравствуй, Вселенная! №3</div><hr/>
 
 <!--Использование строкового значения-->
-<div [ngClass]="'accent error'">Здравствуй, Вселенная! №4</div>
+<div [ngClass]="'accent error'">Здравствуй, Вселенная! №4</div><hr/>
 
 <!--Директива ngStyle для обновления стилей HTML элемента-->
 <div [ngStyle]="getStyles()">Здравствуй, Вселенная! №5</div>

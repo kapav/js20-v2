@@ -2,7 +2,7 @@ import {Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 import {EvidenceService} from './../../services/evidence.service';
-import {User} from '../../interfaces/user';
+import {UserTe} from '../../interfaces/user';
 
 @Component({
   selector: 'wall',
@@ -13,21 +13,23 @@ export class WallComponent implements OnInit, AfterViewInit {
 
   public itemsSource: string[]
 
-  messageFromTextbox: string
+  messageIncontinently: string
   messageKeypress: string
   messageTwoEvents: string
+
   fillingList: string[] = []
 
+  dataTestingInput = 'Изменение классов инпута при действиях'
+
   roles: string[] = ['', 'Гость', 'Модератор', 'Администратор']
-  model: User = new User(0, '', '', 0)
-  submitted: boolean = false
-
-  data = 'Проверочная строка'
-
-  modelFewErrors: User = new User(0, '', '', 0)
+  
+  modelOe: UserTe = new UserTe(0, '', '', 0)
+  submittedOe: boolean = false
+  
+  modelFewErrors: UserTe = new UserTe(0, '', '', 0)
   submittedFewErrors = false
 
-  modelEf: User = new User(0, '', '', 0)
+  modelEf: UserTe = new UserTe(0, '', '', 0)
   submittedEf = false
   // Объект с ошибками, которые будут выведены в пользовательском интерфейсе
   formErrors = {
@@ -58,8 +60,8 @@ export class WallComponent implements OnInit, AfterViewInit {
     this.userformEf.valueChanges.subscribe(data => this.onValueChanged(data));
   }
 
-  onKeyup(data) {
-    this.messageFromTextbox = data;
+  onKeyupIncontinently(data) {
+    this.messageIncontinently = data;
   }
 
   onKeyupKeypress(data) {
@@ -74,15 +76,16 @@ export class WallComponent implements OnInit, AfterViewInit {
     this.fillingList.push(item);
   }
 
-  onSubmit() {
-    this.submitted = true;
+  onSubmitOe() {
+    this.submittedOe = true;
+    console.log('Отправлено. По одной ошибке на контрол.')
   }
 
-  get diagnostic() { return JSON.stringify(this.model); }
+  get diagnosticOe() { return JSON.stringify(this.modelOe); }
 
   onSubmitFewErrors() {
     this.submittedFewErrors = true;
-    console.log('Отправлено.');
+    console.log('Отправлено. Несколько ошибок на контрол.');
   }
 
   get diagnosticFewErrors() { return JSON.stringify(this.modelFewErrors); }

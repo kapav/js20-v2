@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-import {UserEm} from '../../interfaces/user';
+import {UserCo} from '../../interfaces/user';
 
 @Component({
   selector: 'stairway',
@@ -13,7 +13,7 @@ export class StairwayComponent implements OnInit {
   // FormGroup - группа отдельных элементов управления (FormControl'ов)
   // FormControl - класс, который представляет элемент управления
   userForm: FormGroup
-  user: UserEm = new UserEm()
+  user: UserCo = new UserCo()
 
   roles: string[] = ['', 'Гость', 'Модератор', 'Администратор']
 

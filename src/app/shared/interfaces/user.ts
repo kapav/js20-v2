@@ -1,4 +1,5 @@
-export class User {
+// Сообщения об ошибках в шаблоне USER TEmplate
+export class UserTe {
   constructor(
     public id: number,
     public name: string,
@@ -7,8 +8,8 @@ export class User {
   {}
 }
 
-// Сообщения об ошибках из кода компонента
-export class UserEm {
+// Сообщения об ошибках из кода компонента USER COmponent
+export class UserCo {
   constructor(
     public name?: string,
     public email?: string,
