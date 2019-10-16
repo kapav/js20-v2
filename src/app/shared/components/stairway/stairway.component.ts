@@ -32,16 +32,16 @@ export class StairwayComponent implements OnInit {
       minlength: 'Значение должно быть не менее 4-х символов',
       maxlength: 'Значение не должно быть больше 15-и символов'
     },
+    age: {
+      required: 'Обязательное поле возраста',
+      pattern: 'Значение должно быть натуральным числом'
+    },
     email: {
       required: 'Обязательное поле почты',
       pattern: 'Неправильный формат адреса почты'
     },
     role: {
       required: 'Обязательное поле роли'
-    },
-    age: {
-      required: 'Обязательное поле возраста',
-      pattern: 'Значение должно быть натуральным числом'
     }
   }
 
@@ -58,16 +58,16 @@ export class StairwayComponent implements OnInit {
         Validators.minLength(4),
         Validators.maxLength(15)
       ]],
+      age: [this.user.age, [
+        Validators.required,
+        Validators.pattern('\\d+')
+      ]],
       email: [this.user.email, [
         Validators.required,
         Validators.pattern('[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}')
       ]],
       role: [this.user.role, [
         Validators.required
-      ]],
-      age: [this.user.age, [
-        Validators.required,
-        Validators.pattern('\\d+')
       ]]
     })
 
