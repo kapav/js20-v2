@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, Validators, FormBuilder} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'staircase',
@@ -21,7 +21,7 @@ export class StaircaseComponent implements OnInit {
       // При передаче объекта структуры модели первый параметр - значение поля ввода,
       // второй параметр - валидатор или массив валидаторов.
       login: ['user1', Validators.required],
-      password:['', [Validators.required, Validators.minLength(7)]]
+      password: ['', [Validators.required, Validators.minLength(7)]]
     })
   }
 

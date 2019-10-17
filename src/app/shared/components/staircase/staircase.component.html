@@ -4,10 +4,10 @@
   <h3>Реактивная форма. Сообщения об ошибках в шаблоне. Построитель формы для контролов</h3>
   <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
     <div class="form-group">
-      <label for="loginFb">Имя:</label>
+      <label for="loginTb">Имя:</label>
       <input type="text"
              class="form-control"
-             id="loginFb"
+             id="loginTb"
              formControlName="login">
       <div *ngIf="loginForm.get('login').hasError('required') &&
         loginForm.get('login').touched"
@@ -16,10 +16,10 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="passwordFb">Пароль:</label>
+      <label for="passwordTb">Пароль:</label>
       <input type="password"
              class="form-control"
-             id="passwordFb"
+             id="passwordTb"
              formControlName="password">
       <div *ngIf="loginForm.get('password').hasError('required') &&
         loginForm.get('password').touched"

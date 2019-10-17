@@ -10,12 +10,12 @@ import {UserCo} from '../../interfaces/user';
 })
 export class StairwayComponent implements OnInit {
 
+  roles: string[] = ['', 'Гость', 'Модератор', 'Администратор']
+
   // FormGroup - группа отдельных элементов управления (FormControl'ов)
   // FormControl - класс, который представляет элемент управления
   userForm: FormGroup
   user: UserCo = new UserCo()
-
-  roles: string[] = ['', 'Гость', 'Модератор', 'Администратор']
 
   // Объект с ошибками, которые будут выведены в пользовательском интерфейсе
   formErrors = {
@@ -72,13 +72,13 @@ export class StairwayComponent implements OnInit {
     })
 
     this.userForm.valueChanges
-      .subscribe(data => this.onValueChange(data))
+      .subscribe(data => this.onValueChanged(data))
 
-    this.onValueChange()
+    this.onValueChanged()
 
   }
 
-  onValueChange(data?: any) {
+  onValueChanged(data?: any) {
     if (!this.userForm) { return; }
     const form = this.userForm
 

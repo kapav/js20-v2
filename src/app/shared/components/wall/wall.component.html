@@ -138,7 +138,7 @@
         и атрибут name для того, чтобы AngularForm ассоциировал
         элемент управления с формой-->
       <input type="text" class="form-control" id="nameEf"
-        required minlength="4" [(ngModel)]="modelEf.name" name="name" #nameEf="ngModel">
+        required minlength="4" [(ngModel)]="modelEf.name" name="name">
       <div *ngIf="formErrors.name" class="alert alert-danger">
         {{ formErrors.name }}
       </div>
@@ -146,7 +146,7 @@
     <div class="form-group">
       <label for="ageEf">Возраст</label>
       <input type="number" class="form-control" id="ageEf"
-        [(ngModel)]="modelEf.age" name="age" required #ageEf="ngModel">
+        [(ngModel)]="modelEf.age" name="age" required>
       <div *ngIf="formErrors.age" class="alert alert-danger">
         {{ formErrors.age }}
       </div>
@@ -154,7 +154,7 @@
     <div class="form-group">
       <label for="roleEf">Роль</label>
       <select class="form-control" id="roleEf" required
-        [(ngModel)]="modelEf.role" name="role" #roleEf="ngModel">
+        [(ngModel)]="modelEf.role" name="role">
         <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
       </select>
     </div>
