@@ -4,38 +4,38 @@
   <h3>Регистрация пользователя. Реактивная форма. Сообщения об ошибках из кода компонента</h3>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="nameEm">Имя:</label>
+      <label for="nameCo">Имя:</label>
       <input type="text"
              class="form-control"
-             id="nameEm"
+             id="nameCo"
              formControlName="name">
       <div *ngIf="formErrors.name" class="alert alert-danger">
         {{ formErrors.name }}
       </div>
     </div>
     <div class="form-group">
-      <label for="emailEm">Почта:</label>
+      <label for="emailCo">Почта:</label>
       <input type="text"
              class="form-control"
-             id="emailEm"
+             id="emailCo"
              formControlName="email">
       <div *ngIf="formErrors.email" class="alert alert-danger">
         {{ formErrors.email }}
       </div>
     </div>
     <div class="form-group">
-      <label for="ageEm">Возраст:</label>
+      <label for="ageCo">Возраст:</label>
       <input type="text"
              class="form-control"
-             id="ageEm"
+             id="ageCo"
              formControlName="age">
       <div *ngIf="formErrors.age" class="alert alert-danger">
         {{ formErrors.age }}
       </div>
     </div>
     <div class="form-group">
-      <label for="roleEm">Роль:</label>
-      <select class="form-control" id="roleEm"
+      <label for="roleCo">Роль:</label>
+      <select class="form-control" id="roleCo"
         formControlName="role">
         <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
       </select>
