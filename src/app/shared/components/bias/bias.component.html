@@ -1,0 +1,18 @@
+<p>bias works!</p>
+
+<p appHighlight="yellow">Пример текста, выделенного жёлтым</p>
+
+<p [appHighlight]="'orange'">Пример текста, выделенного оранжевым</p>
+
+<p [appHighlight]="colorFromBias">Пример текста, выделенного розовым цветом из родительского компонента</p>
+
+<p appHighlight>Пример текста, выделенного красным цветом по умолчанию</p>
+
+<h3>Атрибутная директива. Выбор цвета для текста</h3>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Зелёный
+  <input type="radio" name="colors" (click)="color='coral'">Оранжевый
+  <input type="radio" name="colors" (click)="color='cyan'">Голубой
+</div>
+<p [appHighlight]="color">Текст с выбором цвета выделения и с красным цветом по умолчанию в компоненте</p>
+<p [appHighlight]="color" defaultColor="violet">Текст с выбором цвета выделения и с фиолетовым цветом по умолчанию в шаблоне</p>

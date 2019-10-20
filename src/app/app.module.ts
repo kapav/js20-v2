@@ -5,6 +5,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import {EvidenceService} from './shared/services/evidence.service';
+import {BracketPipe} from './shared/pipes/bracket.pipe';
+import { UnlessDirective } from './shared/directives/bevel/bevel.directive';
+import {HighlightDirective} from './shared/directives/chamfer/chamfer.directive'
 import { AppComponent } from './app.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {GarretComponent} from './shared/components/garret/garret.component';
@@ -16,8 +19,8 @@ import {SlabComponent} from './shared/components/slab/slab.component';
 import {StairwellComponent} from './shared/components/stairwell/stairwell.component';
 import {StaircaseComponent} from './shared/components/staircase/staircase.component';
 import { StairwayComponent } from './shared/components/stairway/stairway.component';
-import {BracketPipe} from './shared/pipes/bracket.pipe';
-import { UnlessDirective } from './shared/directives/bevel/bevel.component';
+import {CliffComponent} from './shared/components/cliff/cliff.component'
+import {BiasComponent} from './shared/components/bias/bias.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +35,11 @@ import { UnlessDirective } from './shared/directives/bevel/bevel.component';
     StairwellComponent,
     StaircaseComponent,
     StairwayComponent,
+    CliffComponent,
+    BiasComponent,
     BracketPipe,
-    UnlessDirective
+    UnlessDirective,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
